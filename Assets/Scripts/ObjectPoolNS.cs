@@ -143,7 +143,7 @@ public class ObjectPoolNS : MonoBehaviour
     }
     public void SpawnTileMap()
     {
-        SpawnFromPool(tags[Random.Range(2, tags.Length)], transform.position + new Vector3(GameManager.manager.spawn_tilemap_x,0,0));
+        SpawnFromPool(tags[Random.Range(2, tags.Length)], transform.position);
     }
     public void SpawnCheckpointTilemap()
     {

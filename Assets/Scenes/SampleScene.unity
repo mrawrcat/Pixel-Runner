@@ -132,8 +132,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 54221997}
-  - component: {fileID: 54221999}
   - component: {fileID: 54221998}
+  - component: {fileID: 54221999}
   - component: {fileID: 54222000}
   m_Layer: 0
   m_Name: Turn Tilemap Off
@@ -194,6 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36f4ccbe3f50ecb47a506d1940be0d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tilemap_pool: {fileID: 1479344010}
 --- !u!114 &54222000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -762,7 +763,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.036327362, y: -0.025304675, z: -10}
+  m_LocalPosition: {x: 0.070370674, y: -0.058607936, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1634429581}
@@ -1019,7 +1020,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1092589274}
   - component: {fileID: 1092589273}
-  - component: {fileID: 1092589275}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -1056,23 +1056,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1092589275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1092589272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6d6e8012b7405041ab577342d2509eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Grid: {fileID: 0}
-  speed: 0
-  tileheight: 0
-  pools: []
-  tags: []
 --- !u!1 &1100930654
 GameObject:
   m_ObjectHideFlags: 0
@@ -1104,7 +1087,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 129452186}
-  trans: {x: 0, y: 0}
+  trans: {x: 5.5, y: 0}
 --- !u!60 &1100930656
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1130,11 +1113,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.18630022, y: 5.440251}
-      - {x: -8.993714, y: 5.0102806}
+    - - {x: -0.069392145, y: 5.0895267}
+      - {x: -8.818351, y: 4.951827}
       - {x: -8.9801235, y: -5.1217465}
       - {x: 8.902416, y: -5.0828934}
-      - {x: 8.916006, y: 4.9714274}
+      - {x: 8.857553, y: 4.9714274}
 --- !u!4 &1100930657
 Transform:
   m_ObjectHideFlags: 0
@@ -1237,8 +1220,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2023021329
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: -5078181081677347255, guid: d415564ab763f604da102604954b1aac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1464,6 +1447,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1479344008}
   - component: {fileID: 1479344009}
+  - component: {fileID: 1479344010}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -1498,7 +1482,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1803432003}
-  trans: {x: 54, y: 0}
+  trans: {x: 36, y: 0}
+--- !u!114 &1479344010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479344007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6d6e8012b7405041ab577342d2509eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Grid: {fileID: 1092589274}
+  speed: 0
+  tileheight: 0
+  pools:
+  - tag: Flat
+    prefab: {fileID: 7753503628220823362, guid: a38f94d389d44f042bfe799297978de7, type: 3}
+    size: 20
+  tags:
+  - Flat
+  - Flat
+  - Flat
+  - Flat
+  - Flat
 --- !u!1001 &1501838766
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1670,8 +1679,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2023021329
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 7761102205740550985, guid: d415564ab763f604da102604954b1aac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

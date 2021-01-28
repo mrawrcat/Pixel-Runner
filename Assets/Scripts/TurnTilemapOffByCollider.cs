@@ -4,23 +4,16 @@ using UnityEngine;
 
 public class TurnTilemapOffByCollider : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField]
+    private ObjectPoolNS tilemap_pool;
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Tilemap")
         {
             collision.gameObject.SetActive(false);
+            tilemap_pool.SpawnTileMap();
         }
     }
 }
