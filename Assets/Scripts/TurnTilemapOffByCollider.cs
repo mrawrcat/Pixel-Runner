@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowPlayerX : MonoBehaviour
+public class TurnTilemapOffByCollider : MonoBehaviour
 {
-    public Transform player;
-    public Vector2 trans;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +13,14 @@ public class FollowPlayerX : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector2(player.position.x + trans.x, 0);
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Tilemap")
+        {
+            collision.gameObject.SetActive(false);
+        }
     }
 }
