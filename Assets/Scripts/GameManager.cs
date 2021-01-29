@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     [Header("Player Stats")]
     public float move_speed;
     public float jump_force;
+    public float tileCount;
 
     [Header("Tilemap Stuff")]
     public float turn_tilemap_off_x;

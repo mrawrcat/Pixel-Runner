@@ -14,6 +14,7 @@ public class TurnTilemapOffByCollider : MonoBehaviour
         {
             collision.gameObject.SetActive(false);
             tilemap_pool.SpawnTileMap();
+            GameManager.manager.tileCount++;
         }
     }
 }

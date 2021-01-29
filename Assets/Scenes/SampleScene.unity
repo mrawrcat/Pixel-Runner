@@ -312,8 +312,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f2cdc29b6610d8428920c2163832755, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 15
   jumpforce: 20
+  stopNumber: 10
+  currentspeed: 0
 --- !u!50 &129452188
 Rigidbody2D:
   serializedVersion: 4
@@ -1010,6 +1012,69 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1057871699
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1057871701}
+  - component: {fileID: 1057871700}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1057871700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057871699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0dd075afb3c016479d155643c1ebc03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finalSpeed: 0
+  coins: 0
+  total_coins: 0
+  distanceMoved: 0
+  invincible: 0
+  move_speed: 0
+  jump_force: 0
+  tileCount: 0
+  turn_tilemap_off_x: 0
+  spawn_tilemap_x: 0
+  deadheight: 0
+  dead: 0
+  movingReset: 0
+  isUnder: 0
+  bossBattle: 0
+  bossAppearDist: 0
+  whichBoss: 0
+  spawned_checkpoint: 0
+  passed_checkpoint: 0
+  enable_Boss: 0
+--- !u!4 &1057871701
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057871699}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1092589272
 GameObject:
   m_ObjectHideFlags: 0
