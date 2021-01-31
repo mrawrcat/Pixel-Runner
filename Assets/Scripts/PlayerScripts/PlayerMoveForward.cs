@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMoveForward : MonoBehaviour
 {
-    public float speed;
+    public float speed = 0;
     public float jumpforce;
     public float stopNumber;
 
@@ -39,7 +39,9 @@ public class PlayerMoveForward : MonoBehaviour
         {
             if (speed > 0)
             {
-                speed -= 1f * Time.deltaTime;
+                //speed -= 1f * Time.deltaTime;
+                speed = Mathf.MoveTowards(speed, 0, 1* Time.deltaTime);
+                
             }
             else
             {
@@ -56,4 +58,11 @@ public class PlayerMoveForward : MonoBehaviour
     {
         rb2d.velocity = new Vector2(rb2d.velocity.x, jumpforce);
     }
+
+    public void Begin()
+    {
+        speed = 15;
+    }
+
+    
 }
