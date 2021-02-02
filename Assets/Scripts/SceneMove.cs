@@ -43,4 +43,21 @@ public class SceneMove : MonoBehaviour
         PlayerPrefs.DeleteAll();
         
     }
+    IEnumerator MoveTowards(Transform objectToMove, Vector3 toPosition, float duration)
+    {
+        float counter = 0;
+
+        while (counter < duration)
+        {
+            counter += Time.deltaTime;
+            Vector3 currentPos = objectToMove.position;
+
+            float time = Vector3.Distance(currentPos, toPosition) / (duration - counter) * Time.deltaTime;
+
+            objectToMove.position = Vector3.MoveTowards(currentPos, toPosition, time);
+
+            Debug.Log(counter + " / " + duration);
+            yield return null;
+        }
+    }
 }
