@@ -15,7 +15,7 @@ public class PlayerAttack : MonoBehaviour
     public LayerMask whatIsEnemy;
 
     [SerializeField]
-    private ObjectPoolNS bullet_pool;
+    private BulletPool bullet_pool;
 
    
     //private CamShake shake;
@@ -46,12 +46,12 @@ public class PlayerAttack : MonoBehaviour
             if (holding_atk_timer > 1f)
             {
                 //Attack();
-                //Shoot_Bullet();
                 Debug.Log("holding power atk");
             }
             else
             {
                 //Attack();
+                Shoot_Bullet();
                 Debug.Log("regular attack");
             }
             
@@ -63,7 +63,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void Shoot_Bullet()
     {
-        bullet_pool.SpawnProjectile(Atk_Pos, Vector3.up);
+        bullet_pool.SpawnProjectile(Atk_Pos, Vector3.right);
     }
 
     public void Attack()

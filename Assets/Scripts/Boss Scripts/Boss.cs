@@ -11,6 +11,9 @@ public class Boss : MonoBehaviour
     public Vector2 trans;
     public Vector2 battleTransform;
     
+    private float health;
+    [SerializeField]
+    private GameObject finishPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,10 +27,17 @@ public class Boss : MonoBehaviour
         if (!battling)
         {
             transform.position = new Vector2(player.position.x + trans.x, transform.position.y);
+            health = 5;
         }
         else if (battling)
         {
             Move_Boss_To_Start_Point();
+            
+        }
+
+        if(health <= 0 && battling)
+        {
+            finishPanel.SetActive(true);
         }
     }
 
@@ -43,8 +53,29 @@ public class Boss : MonoBehaviour
         }
     }
 
-    public void ToggleBattling()
+    public void ToggleBattlingTrue()
     {
         battling = true;
+        //health = 5;
+    }
+
+    public void ToggleBattlingFalse()
+    {
+        battling = false;
+    }
+
+    public void Set_Tilecount_Zero()
+    {
+        GameManager.manager.Reset_Tile_Count();
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "bullet")
+        {
+            Debug.Log("hit by bullet");
+            health--;
+        }
     }
 }

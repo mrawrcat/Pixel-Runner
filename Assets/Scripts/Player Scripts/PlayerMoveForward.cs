@@ -44,13 +44,13 @@ public class PlayerMoveForward : MonoBehaviour
             if (speed > 0)
             {
                 //speed -= 1f * Time.deltaTime;
-                speed = Mathf.MoveTowards(speed, 0, 1* Time.deltaTime);
+                speed = Mathf.MoveTowards(speed, 0, 1);
                 
             }
             else
             {
-                speed = 0;
-                bossScripts.ToggleBattling();
+                speed = 0f;
+                bossScripts.ToggleBattlingTrue();
             }
         }
         

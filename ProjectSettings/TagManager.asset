@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Tilemap
+  - Spawner
+  - bullet
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -14,8 +17,8 @@ TagManager:
   - UI
   - Ground
   - Enemy
-  - 
-  - 
+  - Background
+  - Midground
   - 
   - 
   - 

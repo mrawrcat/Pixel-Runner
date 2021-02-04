@@ -101,6 +101,12 @@ public class GameManager : MonoBehaviour
     {
         whichBoss = Random.Range(0, 4);
     }
+
+    public void Reset_Tile_Count()
+    {
+        tileCount = 0;
+    }
+
     public void SaveData()
     {
         SaveDataSystem.SaveGameData(this);
