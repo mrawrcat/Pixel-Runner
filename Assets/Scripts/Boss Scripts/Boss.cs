@@ -6,7 +6,8 @@ public class Boss : MonoBehaviour
 {
     [SerializeField]
     private Transform player;
-
+    [SerializeField]
+    private float movespeed;
     public bool battling;
     public Vector2 trans;
     public Vector2 battleTransform;
@@ -45,7 +46,7 @@ public class Boss : MonoBehaviour
     {
         if (transform.position.x != player.position.x + 10f)
         {
-            transform.position = Vector2.MoveTowards(transform.position, new Vector2(player.position.x + battleTransform.x, transform.position.y), 5 * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, new Vector2(player.position.x + battleTransform.x, transform.position.y), movespeed * Time.deltaTime);
         }
         else
         {

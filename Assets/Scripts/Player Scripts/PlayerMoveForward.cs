@@ -28,7 +28,7 @@ public class PlayerMoveForward : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Jump(); //this needs to be if grounded
+            //Jump(); //this needs to be if grounded
             Debug.Log("space pressed");
         }
 
