@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 129452193}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2291,12 +2291,21 @@ MonoBehaviour:
   - tag: Flat
     prefab: {fileID: 7753503628220823362, guid: a38f94d389d44f042bfe799297978de7, type: 3}
     size: 20
+  - tag: Coins Low
+    prefab: {fileID: 7219584375272778995, guid: 27815ae4b8147cf45b1755d251ca0a3c, type: 3}
+    size: 20
+  - tag: Monster Low
+    prefab: {fileID: 3896095058942293271, guid: d7ff5719b7dba0a47b9e339e6f5abe69, type: 3}
+    size: 20
   tags:
   - Flat
   - Flat
-  - Flat
-  - Flat
-  - Flat
+  - Coins Low
+  - Coins Low
+  - Coins Low
+  - Monster Low
+  - Monster Low
+  - Monster Low
 --- !u!61 &1479344011
 BoxCollider2D:
   m_ObjectHideFlags: 0

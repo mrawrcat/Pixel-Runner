@@ -78,9 +78,9 @@ public class GenericEnemy : MonoBehaviour, IEnemy
     {
         if(collision.tag == "Player")
         {
-
+            Debug.Log("enemy hit player");
         }
-        if (collision.tag == "PlayerProjectile")
+        if (collision.tag == "bullet")
         {
             Die();
         }
@@ -92,7 +92,7 @@ public class GenericEnemy : MonoBehaviour, IEnemy
         {
 
         }
-        if (collision.tag == "PlayerProjectile")
+        if (collision.tag == "bullet")
         {
             Die();
         }
