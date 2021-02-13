@@ -29,7 +29,7 @@ public class GenericEnemy : MonoBehaviour, IEnemy
     {
         CombatEvents.EnemyDied(this);
         Debug.Log("killed generic enemy");
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
 
     }
 

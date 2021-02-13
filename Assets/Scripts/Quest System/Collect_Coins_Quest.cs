@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Collect_Coins_Quest : Quest
 {
-    void Start()
+    void Awake()
     {
         Quest_Description = "Collect 50 Coins";
 

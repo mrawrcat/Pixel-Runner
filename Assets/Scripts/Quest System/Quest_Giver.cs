@@ -6,19 +6,21 @@ using UnityEngine.UI;
 
 public class Quest_Giver : MonoBehaviour
 {
+    public GameObject[] list_of_quest_obj;
+    [SerializeField]
+    private GameObject quest;
     public bool Assigned_Quest;
     public bool Helped;
-    public int how_many_quests;
+    //public int how_many_quests;
     [SerializeField]
-    private string[] quest_script_name;
-    public GameObject quest;
+    private string quest_script_name;
+    [SerializeField]
     private Quest Quest;
-    public string quest_name_desc;
     public Text descTxt;
     public Text isQuestComplete;
     public RectTransform descTransform;
     public bool showedQuest = false;
-    public int questNum;
+    //private int questNum;
     [Header("prevent dirty")]
     public GameObject prevent_dirty_canvas;
 
@@ -29,30 +31,33 @@ public class Quest_Giver : MonoBehaviour
     public Vector2 rectTrans_hide;
     public Vector2 rectTrans_show;
 
+    
     void Start()
     {
-        questNum = Random.Range(0, how_many_quests);
-        //Talk_to_Quest_Giver();
+        //quest_script_name = new string[how_many_quests];
+        //questNum = Random.Range(0, how_many_quests);
+        //quest = list_of_quest_obj[Random.Range(0, list_of_quest_obj.Length)];
+        //descTxt.text = quest.GetComponent<Quest>().Quest_Description;
+        //Forfeit_Quest();
+        Talk_to_Quest_Giver();
+        //descTxt.text = quest.GetComponent<Quest>().Quest_Description;
         //descTransform.anchoredPosition = new Vector2(0, 300);
-
 
     }
 
     void Update()
     {
-        Debug.Log("always updating" + quest.GetComponent<Quest>().Quest_Description);
-        quest_name_desc = Quest.Quest_Description;
-        descTxt.text = quest_name_desc;
+        
 
         
         if (!showedQuest)
         {
-            prevent_dirty_canvas.SetActive(true);
+            //prevent_dirty_canvas.SetActive(true);
 
         }
         else
         {
-            prevent_dirty_canvas.SetActive(false);
+            //prevent_dirty_canvas.SetActive(false);
         }
        
     }
@@ -64,7 +69,7 @@ public class Quest_Giver : MonoBehaviour
             Debug.Log("Got Quest");
             Assign_Quest();
             showedQuest = false;
-            StartCoroutine(Show_And_Hide_Quest(rectTrans_hide, rectTrans_show));
+            //StartCoroutine(Show_And_Hide_Quest(rectTrans_hide, rectTrans_show));
 
         }
         else if(Assigned_Quest && !Helped)
@@ -77,12 +82,18 @@ public class Quest_Giver : MonoBehaviour
 
     void Assign_Quest()
     {
+        quest = list_of_quest_obj[Random.Range(0, list_of_quest_obj.Length)];
         Assigned_Quest = true;
-        Quest = (Quest)quest.AddComponent(System.Type.GetType(quest_script_name[questNum]));
+
+        //this adds the quest for it to be able to check if it gets completed or not
+        //quest_script_name = quest.GetComponent<Quest>().Quest_Description;
+        //Quest = (Quest)quest.AddComponent(System.Type.GetType(quest_script_name));
+        Quest = (Quest)quest.GetComponent<Quest>();
         isQuestComplete.text = "Quest Incomplete";
+        descTxt.text = quest.GetComponent<Quest>().Quest_Description;
     }
 
-    void Giver_Checks_Quest()
+    public void Giver_Checks_Quest()
     {
         if (Quest.Quest_Completed)
         {
@@ -90,6 +101,10 @@ public class Quest_Giver : MonoBehaviour
             Quest.Give_Reward();
             Helped = true;
             Assigned_Quest = false;
+        }
+        else
+        {
+            Debug.Log("quest still incomplete");
         }
     }
 
