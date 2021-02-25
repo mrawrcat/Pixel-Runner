@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5674916296170903664}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Monster Startpos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 5674916296259372298}
   - component: {fileID: 5674916296259372297}
   - component: {fileID: 5674916296259372308}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rock1
   m_TagString: Enemy
   m_Icon: {fileID: 0}

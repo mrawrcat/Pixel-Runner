@@ -24,8 +24,11 @@ public class PlayerAttack : MonoBehaviour
 
     private Animator anim;
     private PlayerCollision player_collision;
+    [SerializeField]
     private string current_state;
+    [SerializeField]
     private bool attacking;
+    [SerializeField]
     private float attack_delay = 0.5f;
 
 
@@ -37,7 +40,7 @@ public class PlayerAttack : MonoBehaviour
 
    
     //private CamShake shake;
-    //private bool isFrozen = false;
+    private bool isFrozen = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -92,13 +95,13 @@ public class PlayerAttack : MonoBehaviour
         {
             if (holding_atk_timer > 1f)
             {
-                //Attack();
+                Attack();
                 Shoot_Bullet();
                 Debug.Log("holding power atk");
             }
             else
             {
-                //Attack();
+                Attack();
                 Debug.Log("regular attack");
             }
             
@@ -157,9 +160,11 @@ public class PlayerAttack : MonoBehaviour
                 Debug.Log("attacked enemy projectile");
                 enemy.GetComponent<EnemyProjectile>().Atk_Projectile();
             }
+            */
             if (enemy.GetComponent<IEnemy>() != null)
             {
-                SoundManager.sound_manager.smash_sfx.Play();
+                Debug.Log("player attack hit enemy");
+                //SoundManager.sound_manager.smash_sfx.Play();
                 if (!isFrozen)
                 {
                     StartCoroutine(hit_pause(hit_pause_dur));
@@ -167,18 +172,17 @@ public class PlayerAttack : MonoBehaviour
                 enemy.GetComponent<IEnemy>().Die();
             }
 
-            */
         }
     }
 
     public IEnumerator hit_pause(float dur)//for pause when melee hit maybe bullet hit too?
     {
-        //isFrozen = true;
+        isFrozen = true;
         var original_timescale = Time.timeScale;
         Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(dur);
         Time.timeScale = original_timescale;
-        //isFrozen = false;
+        isFrozen = false;
     }
 
     private void Complete_Attack()

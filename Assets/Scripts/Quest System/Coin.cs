@@ -17,7 +17,7 @@ public class Coin : MonoBehaviour, ICollectable
     {
         //GameManager.manager.coins++;
         CollectionEvents.CollectableCollected(this);
-        //gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
